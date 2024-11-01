@@ -1,0 +1,16 @@
+# AWS S3에 있는 jar 파일을 AWS EC2에 다운로드하고 실행하는 GitHub Actions workflow
+
+name: Deploy Project and Run on AWS EC2
+
+on:
+  workflow_run:
+    workflows: ["Build project and Upload to AWS S3"]
+    types:
+      - completed
+
+jobs:
+  deploy-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download from AWS S3
+        run: aws
