@@ -1,0 +1,50 @@
+name: Build project and Upload to AWS S3
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+env:
+  AWS_S3_BUCKET_NAME: githubaction-bucket
+
+jobs:
+  build-upload:
+    runs-on: ubuntu-latest
+    env:
+      working-directory: ./project
+    
+    steps:
+      - name: Checkout project source code
+        uses: actions/checkout@v3
+      
+      - name: Setup JDK
+        uses: actions/setup-java@v3
+        with:
+          java-verions: '17'
+          distribution: 'temurin'
+      
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+        working-directory: ${{ env.working-directory }}
+
+      - name: Build project
+        run: ./gradlew build
+        working-directory: ${{ env.working-directory }}
+
+      - name: Make zip file
+        run: zip -r project.zip .
+        shell: bash
+
+      - name: Configure AWS S3 credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-northeast-2
+
+      - name: Upload to AWS S3
+        run: aws s3 cp --region ap-northeast-2 ./project.zip s3://$AWS_S3_BUCKET_NAME/
