@@ -37,9 +37,8 @@ jobs:
           distribution: 'temurin'
       - name: Build project
         run: chmod +x gradlew && ./gradlew build
-        working-directory: ${{ env.working-directory }}
       - name: Make zip file
-        run: zip -r project-jar.zip ./build/libs/*.jar
+        run: zip -j project-jar.zip ./build/libs/*.jar
       - name: Upload zip
         uses: actions/upload-artifact@v4
         with:
