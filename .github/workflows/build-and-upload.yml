@@ -38,7 +38,7 @@ jobs:
       - name: Build project
         run: chmod +x gradlew && ./gradlew build
       - name: Make zip file
-        run: zip project.zip ./
+        run: zip -r project.zip ./
       - name: Upload zip
         uses: actions/upload-artifact@v4
         with:
