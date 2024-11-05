@@ -7,7 +7,8 @@ chmod +x $REPOSITORY/project-0.0.1-SNAPSHOT.jar
 
 # chomd +x /home/ubuntu/app/build/libs/proj
 
-java -jar $REPOSITORY/project-0.0.1-SNAPSHOT.jar
+echo "> JAR 실행"
+nohup java -jar $REPOSITORY/project-0.0.1-SNAPSHOT.jar > $REPOSITORY/nohup.out 2>&1 &
 
 # echo "> 현재 구동 중인 애플리케이션 pid 확인"
 
