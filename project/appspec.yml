@@ -1,15 +1,11 @@
 version: 0.0
 os: linux
 files:
-  - source: /
+  - source: project.zip
     destination: /home/ubuntu/app/
     overwrite: yes
 
 permissions:
-  - object: /home/ubuntu/app/build/libs/project-0.0.1-SNAPSHOT.jar
-    pattern: "**"
-    owner: ubuntu
-    group: ubuntu
   - object: /home/ubuntu/app/scripts/deploy.sh
     pattern: "**"
     owner: ubuntu
