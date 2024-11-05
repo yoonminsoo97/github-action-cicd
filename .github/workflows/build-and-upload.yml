@@ -70,8 +70,8 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
           aws deploy create-deployment \
-          --application-name github-actions \
-          --deployment-group-name github-actions-group \
+          --application-name my-codedeploy-application \
+          --deployment-group-name github-action-deploy-group \
           --file-exists-behavior OVERWRITE \
           --s3-location bucket=githubaction-bucket,bundleType=zip,key=project.zip \
           --region ap-northeast-2
