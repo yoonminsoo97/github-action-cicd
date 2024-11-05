@@ -1,11 +1,13 @@
 #!/bin/bash
 
-REPOSITORY=/ubuntu/app/build/libs
+REPOSITORY=/home/ubuntu/app/build/libs
 PROJECT_NAME="project"
 
-chmod +x $REPOSITORY/$JAR_NAME
+chmod +x $REPOSITORY/project-0.0.1-SNAPSHOT.jar
 
-java -jar $REPOSITORY/$JAR_NAME
+# chomd +x /home/ubuntu/app/build/libs/proj
+
+java -jar $REPOSITORY/project-0.0.1-SNAPSHOT.jar
 
 # echo "> 현재 구동 중인 애플리케이션 pid 확인"
 
