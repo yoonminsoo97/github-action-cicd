@@ -1,6 +1,8 @@
 #!/bin/bash
 
-touch hello.md
+echo "> Hello, world!!"
+
+# touch hello.md
 
 # REPOSITORY=/home/ubuntu/app/build/libs
 # PROJECT_NAME= "project"
