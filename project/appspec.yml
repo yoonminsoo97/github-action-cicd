@@ -6,7 +6,7 @@ files:
     overwrite: yes
 
 permissions:
-  - object: /
+  - object: /scripts/deploy.sh
     pattern: "**"
     owner: ubuntu
     group: ubuntu
