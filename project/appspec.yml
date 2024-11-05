@@ -6,17 +6,17 @@ files:
     overwrite: yes
 
 permissions:
-  - object: /ubuntu/app/build/libs/project-0.0.1-SNAPSHOT.jar
+  - object: /home/ubuntu/app/build/libs/project-0.0.1-SNAPSHOT.jar
     pattern: "**"
     owner: ubuntu
     group: ubuntu
-  - object: /ubuntu/app/scripts/deploy.sh
+  - object: /home/ubuntu/app/scripts/deploy.sh
     pattern: "**"
     owner: ubuntu
     group: ubuntu
 
 hooks:
   ApplicationStart:
-    - location: /ubuntu/app/scripts/deploy.sh
+    - location: /home/ubuntu/app/scripts/deploy.sh
       timeout: 60
       runas: ubuntu
