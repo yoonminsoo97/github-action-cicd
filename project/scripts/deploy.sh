@@ -3,9 +3,9 @@
 REPOSITORY=/home/ubuntu/app/build/libs
 PROJECT_NAME="project"
 
-chmod +x "$REPOSITORY/$JAR_NAME"
+chmod +x $REPOSITORY/$JAR_NAME
 
-java -jar "$REPOSITORY/$JAR_NAME"
+java -jar $REPOSITORY/$JAR_NAME
 
 # echo "> 현재 구동 중인 애플리케이션 pid 확인"
 
