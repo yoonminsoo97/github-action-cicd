@@ -2,21 +2,21 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ubuntu/app/
+    destination: /ubuntu/app/
     overwrite: yes
 
 permissions:
-  - object: /home/ubuntu/app/build/libs/project-0.0.1-SNAPSHOT.jar
+  - object: /app/build/libs/project-0.0.1-SNAPSHOT.jar
     pattern: "**"
     owner: ubuntu
     group: ubuntu
-  - object: /home/ubuntu/app/scripts/deploy.sh
+  - object: /app/scripts/deploy.sh
     pattern: "**"
     owner: ubuntu
     group: ubuntu
 
 hooks:
   ApplicationStart:
-    - location: /home/ubuntu/app/scripts/deploy.sh
+    - location: /app/scripts/deploy.sh
       timeout: 60
       runas: ubuntu
