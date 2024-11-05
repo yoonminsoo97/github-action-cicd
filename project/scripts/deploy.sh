@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REPOSITORY=/home/ubuntu/app/build/libs
+REPOSITORY=/ubuntu/app/build/libs
 PROJECT_NAME="project"
 
 chmod +x $REPOSITORY/$JAR_NAME
