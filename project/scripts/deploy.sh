@@ -1,10 +1,7 @@
 #!/bin/bash
 
-REPOSITORY=/home/ubuntu/app/step2
+REPOSITORY=/home/ubuntu/app/build/libs
 PROJECT_NAME= { "project" }
-
-echo "> Build 파일 복사"
-cp $REPOSITORY/zip/*.jar $REPOSITORY/
 
 echo "> 현재 구동 중인 애플리케이션 pid 확인"
 
